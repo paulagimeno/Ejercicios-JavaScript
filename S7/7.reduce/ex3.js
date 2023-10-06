@@ -11,14 +11,10 @@ const exams = [
     {name: 'Keanu Reeves', score: 10}
 ];
 
-const aprobados = exams.filter(function(exam){
-    return exam.score >= 5;
-})
+const sumaNotas = exams.reduce(function(accumulator, exam){
+    return accumulator + exam.score
+}, 0);
 
-console.log(aprobados)
+const media = sumaNotas / exams.length; 
 
-const sumaNotas = aprobados.reduce(function(accumulator, aprobado){
-    return accumulator + aprobado.score
-}, 0); 
-
-console.log(sumaNotas)
+console.log(media)
